@@ -233,7 +233,7 @@ function HomePage() {
 
 
       {/* Method / image split */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <SectionHead
             align="left"
@@ -241,29 +241,26 @@ function HomePage() {
             title="Three steps from enquiry to your first class"
             text="No long forms, no pressure. Sit in a class, see the teaching, then decide."
           />
-          <ol className="mt-10 space-y-6">
+          <ol className="mt-12 border-t border-border">
             {steps.map((s, i) => (
-              <li key={s.title} className="flex gap-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl gradient-primary text-primary-foreground">
-                  <s.icon className="h-5 w-5" />
-                </span>
+              <li key={s.title} className="flex gap-6 border-b border-border py-7">
+                <span className="font-display text-3xl leading-none text-primary">0{i + 1}</span>
                 <div className="min-w-0">
-                  <h3 className="font-display text-lg font-bold">
-                    <span className="text-primary">0{i + 1}.</span> {s.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
+                  <h3 className="font-display text-2xl leading-tight">{s.title}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{s.text}</p>
                 </div>
+                <s.icon className="ml-auto h-5 w-5 shrink-0 text-muted-foreground/50" />
               </li>
             ))}
           </ol>
         </div>
         <div className="relative order-1 lg:order-2">
-          <div className="aspect-square overflow-hidden rounded-[1.75rem] border border-border shadow-[var(--shadow-lift)]">
+          <div className="aspect-[4/5] overflow-hidden border border-border">
             <img
               src={studentImage}
               alt="Student practising with notes and question bank"
               width={1200}
-              height={1200}
+              height={1500}
               loading="lazy"
               className="h-full w-full object-cover"
             />
@@ -272,22 +269,19 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="border-y border-border bg-secondary/50">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <SectionHead
-            eyebrow="Results & voices"
-            title="What our students say after their boards"
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <section className="border-y border-border bg-secondary/60">
+        <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+          <SectionHead align="left" eyebrow="Results & voices" title="What our students say after their boards" />
+          <div className="mt-14 grid gap-px bg-border md:grid-cols-3">
             {testimonials.map((t) => (
-              <figure key={t.name} className="surface-card rounded-2xl p-7">
-                <Quote className="h-7 w-7 text-primary" />
-                <blockquote className="mt-4 text-sm leading-relaxed text-foreground">
+              <figure key={t.name} className="flex flex-col bg-background p-8">
+                <Quote className="h-6 w-6 text-primary" />
+                <blockquote className="mt-5 font-display text-xl leading-snug text-foreground">
                   “{t.quote}”
                 </blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4">
-                  <p className="font-display font-bold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.detail}</p>
+                <figcaption className="mt-auto border-t border-border pt-5">
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.detail}</p>
                 </figcaption>
               </figure>
             ))}
@@ -296,14 +290,12 @@ function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-        <SectionHead eyebrow="FAQ" title="Questions parents ask us most" />
+      <section className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
+        <SectionHead align="left" eyebrow="FAQ" title="Questions parents ask us most" />
         <Accordion type="single" collapsible className="mt-10">
           {faqs.map((f) => (
             <AccordionItem key={f.q} value={f.q}>
-              <AccordionTrigger className="text-left font-display text-base font-bold">
-                {f.q}
-              </AccordionTrigger>
+              <AccordionTrigger className="text-left font-display text-lg">{f.q}</AccordionTrigger>
               <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
                 {f.a}
               </AccordionContent>
@@ -313,15 +305,18 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-[1.75rem] gradient-primary px-6 py-14 text-center sm:px-12">
-          <h2 className="font-display text-3xl font-black text-balance text-primary-foreground sm:text-4xl">
-            Two free demo classes. Zero obligation.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-primary-foreground/85 sm:text-base">
-            Tell us your class and stream — we will suggest the right batch and timing for you.
-          </p>
-          <Button asChild size="xl" variant="secondary" className="mt-8">
+      <section className="border-t border-border bg-ink">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 py-20 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <span className="label-caps text-primary-foreground/60">Admission enquiry</span>
+            <h2 className="mt-5 font-display text-4xl leading-[1.05] text-balance text-primary-foreground sm:text-5xl">
+              Two free demo classes. <span className="italic text-primary-foreground/70">Zero obligation.</span>
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/70">
+              Tell us your class and stream — we will suggest the right batch and timing for you.
+            </p>
+          </div>
+          <Button asChild size="xl" variant="hero">
             <Link to="/contact">
               Enquire now <ArrowRight />
             </Link>
@@ -345,9 +340,13 @@ export function SectionHead({
 }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">{eyebrow}</span>
-      <h2 className="mt-3 font-display text-3xl font-black text-balance sm:text-4xl">{title}</h2>
-      {text && <p className="mt-4 leading-relaxed text-muted-foreground">{text}</p>}
+      <span className="label-caps inline-flex items-center gap-2.5 text-primary">
+        <span className="h-px w-8 bg-primary" aria-hidden />
+        {eyebrow}
+      </span>
+      <h2 className="mt-5 font-display text-4xl leading-[1.05] text-balance sm:text-5xl">{title}</h2>
+      {text && <p className="mt-5 leading-relaxed text-muted-foreground">{text}</p>}
     </div>
   );
 }
+
