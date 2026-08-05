@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { GraduationCap, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 export function SiteFooter() {
   return (
@@ -7,9 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl gradient-primary text-primary-foreground">
-              <GraduationCap className="h-5 w-5" />
-            </span>
+            <BrandLogo className="h-10 w-10" iconClassName="h-5 w-5" />
             <span className="font-display text-lg font-extrabold">MY AIM HUB</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -23,6 +23,9 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
             {[
               { to: "/courses", label: "All Courses" },
+              { to: "/special-courses", label: "Special Courses" },
+              { to: "/toppers", label: "Toppers & Results" },
+              { to: "/activities", label: "Activities" },
               { to: "/faculty", label: "Our Faculty" },
               { to: "/about", label: "About Us" },
               { to: "/contact", label: "Admission Enquiry" },

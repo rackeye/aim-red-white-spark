@@ -11,9 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ActivitiesRouteImport } from './routes/activities'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as FacultyRouteImport } from './routes/faculty'
+import { Route as SpecialCoursesRouteImport } from './routes/special-courses'
+import { Route as ToppersRouteImport } from './routes/toppers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -40,43 +48,90 @@ const FacultyRoute = FacultyRouteImport.update({
   path: '/faculty',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SpecialCoursesRoute = SpecialCoursesRouteImport.update({
+  id: '/special-courses',
+  path: '/special-courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToppersRoute = ToppersRouteImport.update({
+  id: '/toppers',
+  path: '/toppers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faculty': typeof FacultyRoute
+  '/special-courses': typeof SpecialCoursesRoute
+  '/toppers': typeof ToppersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faculty': typeof FacultyRoute
+  '/special-courses': typeof SpecialCoursesRoute
+  '/toppers': typeof ToppersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faculty': typeof FacultyRoute
+  '/special-courses': typeof SpecialCoursesRoute
+  '/toppers': typeof ToppersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/courses' | '/faculty'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/contact'
+    | '/courses'
+    | '/faculty'
+    | '/special-courses'
+    | '/toppers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/courses' | '/faculty'
-  id: '__root__' | '/' | '/about' | '/contact' | '/courses' | '/faculty'
+  to:
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/contact'
+    | '/courses'
+    | '/faculty'
+    | '/special-courses'
+    | '/toppers'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/contact'
+    | '/courses'
+    | '/faculty'
+    | '/special-courses'
+    | '/toppers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ActivitiesRoute: typeof ActivitiesRoute
   ContactRoute: typeof ContactRoute
   CoursesRoute: typeof CoursesRoute
   FacultyRoute: typeof FacultyRoute
+  SpecialCoursesRoute: typeof SpecialCoursesRoute
+  ToppersRoute: typeof ToppersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -93,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -116,15 +178,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FacultyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/special-courses': {
+      id: '/special-courses'
+      path: '/special-courses'
+      fullPath: '/special-courses'
+      preLoaderRoute: typeof SpecialCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/toppers': {
+      id: '/toppers'
+      path: '/toppers'
+      fullPath: '/toppers'
+      preLoaderRoute: typeof ToppersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ActivitiesRoute: ActivitiesRoute,
   ContactRoute: ContactRoute,
   CoursesRoute: CoursesRoute,
   FacultyRoute: FacultyRoute,
+  SpecialCoursesRoute: SpecialCoursesRoute,
+  ToppersRoute: ToppersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
