@@ -131,23 +131,21 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
 }
 
 @utility surface-card {
   background-color: var(--card);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
   transition:
-    transform var(--transition-smooth),
     box-shadow var(--transition-smooth),
     border-color var(--transition-smooth);
 
   &:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-lift);
-    border-color: color-mix(in oklab, var(--primary) 35%, transparent);
+    border-color: color-mix(in oklab, var(--primary) 40%, transparent);
   }
 }
 
@@ -161,16 +159,67 @@
   color: transparent;
 }
 
+@utility serif-accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--primary);
+}
+
+@utility label-caps {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--border);
+}
+
+@utility paper-noise {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--foreground) 12%, transparent) 0.5px,
+      transparent 0.5px
+    );
+    background-size: 4px 4px;
+  }
+}
+
 @utility grid-paper {
   background-image:
-    linear-gradient(color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px);
-  background-size: 44px 44px;
+    linear-gradient(color-mix(in oklab, var(--foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility marquee-track {
+  display: inline-flex;
+  min-width: 200%;
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @utility reveal-up {
-  animation: reveal-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: reveal-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
 
 @keyframes reveal-up {
   from {
