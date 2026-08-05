@@ -28,8 +28,8 @@ function FacultyPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="grid-paper absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
-          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Faculty</span>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-black text-balance sm:text-5xl">
+          <span className="label-caps text-primary">Faculty</span>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-balance sm:text-6xl">
             Teachers who stay till the last doubt is cleared
           </h1>
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
@@ -42,9 +42,9 @@ function FacultyPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {faculty.map((f) => (
-            <article key={f.name} className="surface-card rounded-2xl p-7">
+            <article key={f.name} className="surface-card rounded-md p-7">
               <div className="flex items-center gap-4">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl gradient-primary font-display text-lg font-black text-primary-foreground">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-sm bg-primary font-display text-xl text-primary-foreground">
                   {f.name
                     .split(" ")
                     .map((n) => n[0])

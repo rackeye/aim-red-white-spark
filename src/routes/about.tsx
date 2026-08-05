@@ -48,8 +48,8 @@ function AboutPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="grid-paper absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
-          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">About us</span>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-black text-balance sm:text-5xl">
+          <span className="label-caps text-primary">About us</span>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-balance sm:text-6xl">
             A coaching hub built by teachers, run for students
           </h1>
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
@@ -60,7 +60,7 @@ function AboutPage() {
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-[1.75rem] border border-border shadow-[var(--shadow-lift)]">
+        <div className="overflow-hidden border border-border">
           <img
             src={studentImage}
             alt="Student studying with notes at MY AIM HUB OF EDUCATION"
@@ -71,7 +71,7 @@ function AboutPage() {
           />
         </div>
         <div>
-          <h2 className="font-display text-3xl font-black text-balance">Our teaching promise</h2>
+          <h2 className="font-display text-4xl text-balance">Our teaching promise</h2>
           <ul className="mt-7 space-y-4">
             {[
               "Syllabus completed at least two months before boards",
@@ -96,7 +96,7 @@ function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-4 sm:px-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-display text-4xl font-black text-primary">{s.value}</p>
+              <p className="font-display text-4xl text-primary">{s.value}</p>
               <p className="mt-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                 {s.label}
               </p>
@@ -106,10 +106,10 @@ function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <h2 className="font-display text-3xl font-black text-balance">What we stand for</h2>
+        <h2 className="font-display text-4xl text-balance">What we stand for</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {values.map((v) => (
-            <article key={v.title} className="surface-card rounded-2xl p-7">
+            <article key={v.title} className="surface-card rounded-md p-7">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary-soft text-primary">
                 <v.icon className="h-6 w-6" />
               </span>

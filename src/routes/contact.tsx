@@ -52,8 +52,8 @@ function ContactPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="grid-paper absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
-          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Contact</span>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-black text-balance sm:text-5xl">
+          <span className="label-caps text-primary">Contact</span>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-balance sm:text-6xl">
             Book your two free demo classes
           </h1>
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
@@ -63,7 +63,7 @@ function ContactPage() {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_1fr]">
-        <form onSubmit={handleSubmit} className="surface-card rounded-2xl p-7 sm:p-9">
+        <form onSubmit={handleSubmit} className="surface-card rounded-md p-7 sm:p-9">
           <h2 className="font-display text-2xl font-bold">Admission enquiry</h2>
           <div className="mt-7 grid gap-5 sm:grid-cols-2">
             <div className="grid gap-2">
@@ -137,7 +137,7 @@ function ContactPage() {
               lines: ["Monday – Saturday · 8:00 AM – 8:00 PM", "Sunday · 10:00 AM – 1:00 PM"],
             },
           ].map((item) => (
-            <div key={item.title} className="surface-card flex gap-4 rounded-2xl p-6">
+            <div key={item.title} className="surface-card flex gap-4 rounded-md p-6">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary">
                 <item.icon className="h-5 w-5" />
               </span>
