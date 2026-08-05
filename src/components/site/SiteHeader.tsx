@@ -16,17 +16,17 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:py-4">
         <Link to="/" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl gradient-primary text-primary-foreground shadow-[var(--shadow-soft)]">
-            <GraduationCap className="h-6 w-6" />
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-sm bg-primary text-primary-foreground">
+            <GraduationCap className="h-5 w-5" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-display text-base leading-tight font-extrabold tracking-tight sm:text-lg">
+            <span className="block truncate font-display text-xl leading-tight tracking-tight sm:text-2xl">
               MY AIM HUB
             </span>
-            <span className="block truncate text-[11px] font-semibold tracking-[0.22em] text-primary uppercase">
+            <span className="label-caps block truncate text-[10px] text-muted-foreground">
               of Education
             </span>
           </span>
@@ -38,8 +38,8 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="rounded-lg px-3.5 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary"
-                activeProps={{ className: "bg-primary-soft text-primary" }}
+                className="rounded-sm px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                activeProps={{ className: "text-foreground" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
