@@ -80,7 +80,7 @@ function HomePage() {
           className="absolute inset-x-0 top-0 h-px bg-border"
           aria-hidden
         />
-        <div className="relative mx-auto grid max-w-7xl items-end gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
           <div className="reveal-up">
             <span className="label-caps inline-flex items-center gap-2.5 text-primary">
               <span className="h-px w-8 bg-primary" aria-hidden />
@@ -110,7 +110,7 @@ function HomePage() {
           </div>
 
           <div className="relative reveal-up">
-            <div className="aspect-[4/5] overflow-hidden border border-border bg-card">
+            <div className="aspect-[5/6] overflow-hidden border border-border bg-card">
               <img
                 src={heroImage}
                 alt="Teacher explaining a concept to students at MY AIM HUB OF EDUCATION"
@@ -209,7 +209,7 @@ function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto flex items-end justify-between border-t border-border pt-6 pt-8">
+                <div className="mt-auto flex items-end justify-between border-t border-border pt-8">
                   <div>
                     <p className="font-display text-2xl leading-none text-primary">{c.fee}</p>
                     <p className="mt-2 text-xs text-muted-foreground">{c.batch}</p>
