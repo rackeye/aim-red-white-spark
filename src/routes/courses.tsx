@@ -34,8 +34,8 @@ function CoursesPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="grid-paper absolute inset-0 opacity-70" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
-          <span className="label-caps text-primary">Courses</span>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl text-balance sm:text-6xl">
+          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Courses</span>
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-black text-balance sm:text-5xl">
             Every class. Every stream. One clear plan.
           </h1>
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
@@ -65,7 +65,7 @@ function CoursesPage() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {list.map((c) => (
-            <article key={c.slug} className="surface-card flex flex-col rounded-md p-7">
+            <article key={c.slug} className="surface-card flex flex-col rounded-2xl p-7">
               <span className="w-fit rounded-full bg-primary-soft px-3 py-1 text-[11px] font-bold tracking-wider text-primary uppercase">
                 {c.level}
               </span>
