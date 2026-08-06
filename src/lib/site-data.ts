@@ -156,7 +156,7 @@ export const courseGroups = ["All", "Foundation", "Senior Secondary"] as const;
 
 export const stats = [
   { value: "12+", label: "Years of teaching" },
-  { value: "500+", label: "Students taught" },
+  { value: "1000+", label: "Students taught" },
   { value: "96%", label: "Above 80% in boards" },
   { value: "1:18", label: "Teacher to student ratio" },
 ];
