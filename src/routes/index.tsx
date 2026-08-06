@@ -183,7 +183,9 @@ function HomePage() {
                 </ul>
                 <div className="mt-6 flex items-end justify-between border-t border-border pt-5">
                   <div>
-                    <p className="font-display text-lg font-extrabold text-primary">{c.fee}</p>
+                    <p className="font-display text-lg font-extrabold text-primary">
+                      {c.fees.monthly ?? c.fees.quarterly ?? c.fees.yearly}
+                    </p>
                     <p className="text-xs text-muted-foreground">{c.batch}</p>
                   </div>
                   <Button asChild variant="soft" size="sm">

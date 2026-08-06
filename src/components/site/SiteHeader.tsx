@@ -50,8 +50,12 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <Button asChild variant="hero" size="lg" className="hidden sm:inline-flex">
-            <Link to="/contact">Book Free Demo</Link>
+          <Button asChild variant="outline" size="lg" className="hidden sm:inline-flex">
+            <Link to="/dashboard">Student Login</Link>
+          </Button>
+
+          <Button asChild variant="hero" size="lg" className="hidden md:inline-flex">
+            <Link to="/enroll">Enroll Now</Link>
           </Button>
 
           <Button
@@ -78,6 +82,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link
+            to="/dashboard"
+            onClick={() => setOpen(false)}
+            className="block rounded-lg px-3 py-3 text-sm font-semibold text-foreground hover:bg-primary-soft hover:text-primary"
+          >
+            Student Login / Register
+          </Link>
           <a
             href={`tel:${brand.phone.replace(/\s/g, "")}`}
             className="mt-2 flex items-center gap-2 rounded-lg bg-primary-soft px-3 py-3 text-sm font-semibold text-primary"
