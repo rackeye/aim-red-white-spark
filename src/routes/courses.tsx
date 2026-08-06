@@ -12,7 +12,7 @@ export const Route = createFileRoute("/courses")({
       {
         name: "description",
         content:
-          "Explore every program: Class 1–5, 6–8 foundation, Class 9–10 boards and Class 11–12 Science, Commerce and Arts with fees, timings and subjects.",
+          "Explore every program: Class 1–8 foundation, Class 9–10 boards and Class 11–12 Science, Commerce and Arts with fees, timings and subjects.",
       },
       { property: "og:title", content: "All Courses — Class 1 to 12 | MY AIM HUB OF EDUCATION" },
       {
@@ -39,8 +39,8 @@ function CoursesPage() {
             Every class. Every stream. One clear plan.
           </h1>
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
-            Ten structured programs covering Class 1 to 12 — including Science (PCM & PCB),
-            Commerce and Arts for senior secondary students.
+            Structured programs covering Class 1 to 12 — including CBSE & ICSE for Foundation, Science,
+            Commerce, and Humanities.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ function CoursesPage() {
                 ))}
               </ul>
 
-              <dl className="mt-6 grid gap-2.5 border-t border-border pt-5 text-sm">
+              <dl className="mt-6 grid gap-3 border-t border-border pt-5 text-sm">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <CalendarDays className="h-4 w-4 shrink-0 text-primary" />
                   <span className="min-w-0">{c.batch}</span>
@@ -100,9 +100,44 @@ function CoursesPage() {
                   <Layers className="h-4 w-4 shrink-0 text-primary" />
                   <span>{c.subjects.length} subjects · max 18 students</span>
                 </div>
-                <div className="flex items-center gap-2 font-display text-lg font-extrabold text-primary">
-                  <IndianRupee className="h-4 w-4 shrink-0" />
-                  <span>{c.fee.replace("₹", "")}</span>
+
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  {c.fees.monthly && (
+                    <div className="flex flex-col justify-center rounded-lg border border-border/60 bg-secondary/30 p-2.5">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Monthly</span>
+                      <div className="mt-1 flex items-center font-display text-lg font-extrabold text-primary">
+                        <IndianRupee className="mr-0.5 h-4 w-4 shrink-0" />
+                        <span>{c.fees.monthly.replace("₹", "")}</span>
+                      </div>
+                    </div>
+                  )}
+                  {c.fees.quarterly && (
+                    <div className="flex flex-col justify-center rounded-lg border border-border/60 bg-secondary/30 p-2.5">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Quarterly</span>
+                      <div className="mt-1 flex items-center font-display text-lg font-extrabold text-primary">
+                        <IndianRupee className="mr-0.5 h-4 w-4 shrink-0" />
+                        <span>{c.fees.quarterly.replace("₹", "")}</span>
+                      </div>
+                    </div>
+                  )}
+                  {c.fees.halfYearly && (
+                    <div className="flex flex-col justify-center rounded-lg border border-border/60 bg-secondary/30 p-2.5">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Half-Year</span>
+                      <div className="mt-1 flex items-center font-display text-lg font-extrabold text-primary">
+                        <IndianRupee className="mr-0.5 h-4 w-4 shrink-0" />
+                        <span>{c.fees.halfYearly.replace("₹", "")}</span>
+                      </div>
+                    </div>
+                  )}
+                  {c.fees.yearly && (
+                    <div className="flex flex-col justify-center rounded-lg border border-border/60 bg-secondary/30 p-2.5">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Yearly</span>
+                      <div className="mt-1 flex items-center font-display text-lg font-extrabold text-primary">
+                        <IndianRupee className="mr-0.5 h-4 w-4 shrink-0" />
+                        <span>{c.fees.yearly.replace("₹", "")}</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </dl>
 
