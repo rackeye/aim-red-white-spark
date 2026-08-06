@@ -54,18 +54,18 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              2nd Floor, Shiksha Complex, Station Road, Your City
+              2nd Floor OF PNB Bank, near Dominos, Feroz Gandhi Nagar, Raebareli
             </li>
             <li className="flex gap-2.5">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <a href="tel:+919000000000" className="hover:text-primary">
-                +91 90000 00000
+              <a href="tel:+919125724483" className="hover:text-primary">
+                +91 91257 24483
               </a>
             </li>
             <li className="flex gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <a href="mailto:info@myaimhub.in" className="hover:text-primary">
-                info@myaimhub.in
+              <a href="mailto:myaimhubofeducation@gmail.com" className="hover:text-primary">
+                myaimhubofeducation@gmail.com
               </a>
             </li>
           </ul>
