@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <BrandLogo className="h-10 w-10" iconClassName="h-5 w-5" />
-            <span className="font-display text-lg font-extrabold">MY AIM HUB</span>
+            <span className="font-display text-lg font-extrabold">MY AIM HUB OF EDUCATION</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             A coaching institute built on discipline, doubt-clearing and honest results — Class 1 to
@@ -42,9 +42,9 @@ export function SiteFooter() {
         <div>
           <h4 className="text-sm font-bold tracking-wider uppercase">Programs</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
-            <li>Class 1 – 5 Junior Foundation</li>
-            <li>Class 6 – 8 Foundation Booster</li>
-            <li>Class 9 – 10 Board Champions</li>
+            <li>Class 1 – 8 Junior Foundation</li>
+            <li>Class 9 & 10 Foundation Booster</li>
+            <li>Class 10 & 12 Board Champions</li>
             <li>Class 11 – 12 Science · Commerce · Arts</li>
           </ul>
         </div>
