@@ -227,7 +227,7 @@ export const toppers: Topper[] = [
 
 export const topperStats = [
   { value: "100+", label: "Above 90% since 2019" },
-  { value: "100+", label: "Trusted Parents" },
+  { value: "1000+", label: "Trusted Parents" },
   { value: "96%", label: "Students above 80%" },
   { value: "100%", label: "Board pass record" },
 ];
