@@ -123,7 +123,7 @@ function ContactPage() {
             {
               icon: MapPin,
               title: "Visit the centre",
-              lines: ["2nd Floor, Shiksha Complex", "Station Road, Your City – 000000"],
+              lines: ["2nd Floor OF PNB Bank, near Dominos, Feroz Gandhi Nagar, Raebareli – 229001"],
             },
             {
               icon: Phone,
