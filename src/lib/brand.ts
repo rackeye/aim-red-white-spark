@@ -11,6 +11,6 @@ export const brand = {
   tagline: "of Education",
   fullName: "MY AIM HUB OF EDUCATION",
   logoSrc: "/logo.png",
-  phone: "+91 90000 00000",
-  email: "info@myaimhub.in",
+  phone: "+91 91257 24483",
+  email: "myaimhubofeducation@gmail.com",
 };
