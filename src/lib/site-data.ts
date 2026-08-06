@@ -5,19 +5,37 @@ export type Course = {
   level: string;
   subjects: string[];
   batch: string;
-  fee: string;
+  fees: {
+    monthly?: string;
+    quarterly?: string;
+    halfYearly?: string;
+    yearly?: string;
+  };
   highlights: string[];
+};
+
+export type Topper = {
+  name: string;
+  exam: string;
+  score: string;
+  year: string;
+  note: string;
+  image?: string; // Optional image property for the UI
 };
 
 export const courses: Course[] = [
   {
-    slug: "class-1-5",
-    title: "Class 1 – 5 Junior Foundation",
+    slug: "class-1-8",
+    title: "Class 1 – 8 Junior Foundation",
     group: "Foundation",
-    level: "Class 1 to 5",
-    subjects: ["English", "Hindi", "Mathematics", "EVS", "Basic Computer"],
+    level: "Class 1 to 8",
+    subjects: ["English", "Hindi", "Mathematics", "Social Science", "Science", "GK", "Computer"],
     batch: "Mon–Sat · 4:00 PM – 5:30 PM",
-    fee: "₹800 / month",
+    fees: {
+      quarterly: "₹4,500",
+      halfYearly: "₹8,000",
+      yearly: "₹14,000",
+    },
     highlights: [
       "Activity based concept building",
       "Handwriting & reading practice",
@@ -25,13 +43,17 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: "class-6-8",
-    title: "Class 6 – 8 Foundation Booster",
+    slug: "class-9-10",
+    title: "Class 9 & 10 Foundation (CBSE)",
     group: "Foundation",
-    level: "Class 6 to 8",
-    subjects: ["Mathematics", "Science", "Social Science", "English", "Sanskrit"],
+    level: "Class 9 & 10",
+    subjects: ["Mathematics", "Science", "GeoGraphy", "English", "Physics", "Chemistry", "Biology", "Computer", "History & Civics", "Economics"],
     batch: "Mon–Sat · 5:30 PM – 7:00 PM",
-    fee: "₹1,200 / month",
+    fees: {
+      halfYearly: "₹14,000",
+      quarterly: "₹7,500",
+      yearly: "₹23,000",
+    },
     highlights: [
       "NCERT plus advanced worksheets",
       "Olympiad & NTSE foundation",
@@ -39,41 +61,35 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: "class-9",
-    title: "Class 9 Board Foundation",
-    group: "Secondary",
-    level: "Class 9",
-    subjects: ["Mathematics", "Science", "Social Science", "English", "IT"],
-    batch: "Mon–Sat · 6:00 PM – 8:00 PM",
-    fee: "₹1,600 / month",
+    slug: "class-9-10-icse",
+    title: "Class 9 & 10 Foundation (ICSE)",
+    group: "Foundation",
+    level: "Class 9 & 10",
+    subjects: ["Mathematics", "Science", "GeoGraphy", "English", "Physics", "Chemistry", "Biology", "Computer", "History & Civics", "Economics"],
+    batch: "Mon–Sat · 5:30 PM – 7:00 PM",
+    fees: {
+      halfYearly: "₹15,000",
+      quarterly: "₹8,500",
+      yearly: "₹28,000",
+    },
     highlights: [
-      "Chapter-wise practice sheets",
-      "Doubt sessions every Saturday",
-      "Basics of JEE/NEET pattern questions",
+      "NCERT plus advanced worksheets",
+      "Olympiad & NTSE foundation",
+      "Monthly unit tests with analysis",
     ],
   },
   {
-    slug: "class-10",
-    title: "Class 10 Board Champions",
-    group: "Secondary",
-    level: "Class 10",
-    subjects: ["Mathematics", "Science", "Social Science", "English", "Hindi"],
-    batch: "Mon–Sat · 7:00 AM – 9:00 AM",
-    fee: "₹1,900 / month",
-    highlights: [
-      "Full syllabus done before January",
-      "15+ full length board model papers",
-      "Personal mentor for every student",
-    ],
-  },
-  {
-    slug: "class-11-science",
-    title: "Class 11 Science (PCM / PCB)",
+    slug: "class-11-12-science",
+    title: "Class 11 & 12 Science (CBSE)",
     group: "Senior Secondary",
-    level: "Class 11 · Science",
-    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English"],
-    batch: "Mon–Sat · 6:30 AM – 9:30 AM",
-    fee: "₹2,600 / month",
+    level: "Class 11 & 12 · Science",
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English", "Computer Science"],
+    batch: "Mon–Sat · 5:30 PM – 7:30 PM",
+    fees: {
+      quarterly: "₹7,500",
+      halfYearly: "₹14,500",
+      yearly: "₹27,000",
+    },
     highlights: [
       "Board + JEE/NEET integrated teaching",
       "Separate PCM and PCB sections",
@@ -81,13 +97,35 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: "class-11-commerce",
-    title: "Class 11 Commerce",
+    slug: "class-11-12-science-icse",
+    title: "Class 11 & 12 Science (ICSE)",
     group: "Senior Secondary",
-    level: "Class 11 · Commerce",
-    subjects: ["Accountancy", "Business Studies", "Economics", "Maths", "English"],
+    level: "Class 11 & 12 · Science",
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English", "Computer Science"],
+    batch: "Mon–Sat · 5:30 PM – 7:30 PM",
+    fees: {
+      quarterly: "₹9,000",
+      halfYearly: "₹17,000",
+      yearly: "₹30,000",
+    },
+    highlights: [
+      "Board + JEE/NEET integrated teaching",
+      "Separate PCM and PCB sections",
+      "Daily practice problem sheets",
+    ],
+  },
+  {
+    slug: "class-11-12-commerce",
+    title: "Class 11 & 12 Commerce (CBSE/ICSE)",
+    group: "Senior Secondary",
+    level: "Class 11 & 12 · Commerce",
+    subjects: ["Accountancy", "Business Studies", "Economics", "Maths", "English", "Computer Science/AI"],
     batch: "Mon–Sat · 3:00 PM – 5:30 PM",
-    fee: "₹2,100 / month",
+    fees: {
+      quarterly: "₹6,000",
+      halfYearly: "₹11,000",
+      yearly: "₹21,000",
+    },
     highlights: [
       "Ledger to balance sheet, step by step",
       "CA Foundation orientation",
@@ -95,68 +133,30 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: "class-11-arts",
-    title: "Class 11 Arts / Humanities",
+    slug: "class-11-12-arts",
+    title: "Class 11 & 12 Humanities (CBSE/ICSE)",
     group: "Senior Secondary",
-    level: "Class 11 · Arts",
-    subjects: ["History", "Political Science", "Geography", "Sociology", "English"],
+    level: "Class 11 & 12 · Arts",
+    subjects: ["History", "Political Science", "Geography", "Sociology", "English", "Economics"],
     batch: "Mon–Sat · 3:00 PM – 5:30 PM",
-    fee: "₹1,700 / month",
+    fees: {
+      quarterly: "₹6,000",
+      halfYearly: "₹11,000",
+      yearly: "₹21,000",
+    },
     highlights: [
       "Answer writing practice",
       "Map & diagram mastery",
       "UPSC/CUET awareness classes",
     ],
   },
-  {
-    slug: "class-12-science",
-    title: "Class 12 Science (PCM / PCB)",
-    group: "Senior Secondary",
-    level: "Class 12 · Science",
-    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "English"],
-    batch: "Mon–Sat · 6:30 AM – 9:30 AM",
-    fee: "₹2,900 / month",
-    highlights: [
-      "Board scoring strategy + numericals drill",
-      "Weekly JEE/NEET pattern mock tests",
-      "Previous 15 years solved in class",
-    ],
-  },
-  {
-    slug: "class-12-commerce",
-    title: "Class 12 Commerce",
-    group: "Senior Secondary",
-    level: "Class 12 · Commerce",
-    subjects: ["Accountancy", "Business Studies", "Economics", "Maths", "English"],
-    batch: "Mon–Sat · 2:30 PM – 5:00 PM",
-    fee: "₹2,400 / month",
-    highlights: [
-      "Company accounts & analysis made easy",
-      "Speed-solving practice for boards",
-      "CUET commerce preparation",
-    ],
-  },
-  {
-    slug: "class-12-arts",
-    title: "Class 12 Arts / Humanities",
-    group: "Senior Secondary",
-    level: "Class 12 · Arts",
-    subjects: ["History", "Political Science", "Geography", "Sociology", "English"],
-    batch: "Mon–Sat · 2:30 PM – 5:00 PM",
-    fee: "₹1,900 / month",
-    highlights: [
-      "Structured notes for every chapter",
-      "Board-style long answer drills",
-      "CUET humanities test series",
-    ],
-  },
 ];
 
-export const courseGroups = ["All", "Foundation", "Secondary", "Senior Secondary"] as const;
+export const courseGroups = ["All", "Foundation", "Senior Secondary"] as const;
 
 export const stats = [
   { value: "12+", label: "Years of teaching" },
-  { value: "4,800+", label: "Students taught" },
+  { value: "500+", label: "Students taught" },
   { value: "96%", label: "Above 80% in boards" },
   { value: "1:18", label: "Teacher to student ratio" },
 ];
@@ -166,7 +166,7 @@ export const faculty = [
   { name: "Anjali Verma", subject: "Mathematics · Class 9–12", exp: "11 years" },
   { name: "S. Praveen", subject: "Chemistry · Class 11–12", exp: "9 years" },
   { name: "Neha Gupta", subject: "Biology · Class 11–12", exp: "8 years" },
-  { name: "Mohd. Arif", subject: "Accountancy & Economics", exp: "10 years" },
+  { name: "Arifa Khan", subject: "Accountancy & Economics", exp: "10 years" },
   { name: "Kavita Singh", subject: "Foundation Class 1–8", exp: "12 years" },
 ];
 
@@ -214,20 +214,20 @@ export const faqs = [
   },
 ];
 
-export const toppers = [
-  { name: "Ritika Yadav", exam: "Class 12 · Science (PCB)", score: "94.2%", year: "2025", note: "State rank in Biology, now at a government medical college." },
-  { name: "Aman Kumar", exam: "Class 10 · Boards", score: "96.0%", year: "2025", note: "School topper — perfect 100 in Mathematics." },
-  { name: "Sneha Patel", exam: "Class 12 · Commerce", score: "91.4%", year: "2025", note: "Highest Accountancy score in the centre." },
-  { name: "Harsh Meena", exam: "Class 12 · Science (PCM)", score: "93.8%", year: "2024", note: "JEE Mains 98.1 percentile after two years with us." },
-  { name: "Ayesha Khan", exam: "Class 10 · Boards", score: "95.2%", year: "2024", note: "Full marks in Science and Social Science." },
-  { name: "Devansh Rai", exam: "Class 12 · Arts", score: "89.6%", year: "2024", note: "Topper in Political Science and History." },
-  { name: "Priya Sharma", exam: "Class 10 · Boards", score: "94.4%", year: "2023", note: "NTSE stage-1 qualifier from the foundation batch." },
-  { name: "Rohan Gupta", exam: "Class 12 · Science (PCM)", score: "92.0%", year: "2023", note: "Cleared NEET-level Physics with weekly test discipline." },
+export const toppers: Topper[] = [
+  { name: "Ritika Yadav", exam: "Class 12 · Science (PCB)", score: "94.2%", year: "2025", note: "State rank in Biology, now at a government medical college.", image: "/images/toppers/ritika.jpg" },
+  { name: "Aman Kumar", exam: "Class 10 · Boards", score: "96.0%", year: "2025", note: "School topper — perfect 100 in Mathematics.", image: "/images/toppers/ritika.jpg"},
+  { name: "Sneha Patel", exam: "Class 12 · Commerce", score: "91.4%", year: "2025", note: "Highest Accountancy score in the centre.", image: "/images/toppers/ritika.jpg" },
+  { name: "Harsh Meena", exam: "Class 12 · Science (PCM)", score: "93.8%", year: "2024", note: "JEE Mains 98.1 percentile after two years with us.", image: "/images/toppers/ritika.jpg" },
+  { name: "Ayesha Khan", exam: "Class 10 · Boards", score: "95.2%", year: "2024", note: "Full marks in Science and Social Science.", image: "/images/toppers/ritika.jpg" },
+  { name: "Devansh Rai", exam: "Class 12 · Arts", score: "89.6%", year: "2024", note: "Topper in Political Science and History.", image: "/images/toppers/ritika.jpg" },
+  { name: "Priya Sharma", exam: "Class 10 · Boards", score: "94.4%", year: "2023", note: "NTSE stage-1 qualifier from the foundation batch.", image: "/images/toppers/ritika.jpg" },
+  { name: "Rohan Gupta", exam: "Class 12 · Science (PCM)", score: "92.0%", year: "2023", note: "Cleared NEET-level Physics with weekly test discipline.", image: "/images/toppers/ritika.jpg" },
 ];
 
 export const topperStats = [
-  { value: "180+", label: "Above 90% since 2019" },
-  { value: "12", label: "District rank holders" },
+  { value: "100+", label: "Above 90% since 2019" },
+  { value: "100+", label: "Trusted Parents" },
   { value: "96%", label: "Students above 80%" },
   { value: "100%", label: "Board pass record" },
 ];
