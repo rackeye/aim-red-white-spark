@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Book a free demo class or ask about batches, fees and timings at MY AIM HUB OF EDUCATION. Call +91 90000 00000 or send an enquiry.",
+          "Book a free demo class or ask about batches, fees and timings at MY AIM HUB OF EDUCATION. Call +91 91257 24483 or send an enquiry.",
       },
       { property: "og:title", content: "Contact MY AIM HUB OF EDUCATION" },
       {
@@ -128,13 +128,13 @@ function ContactPage() {
             {
               icon: Phone,
               title: "Call or WhatsApp",
-              lines: ["+91 90000 00000", "+91 90000 00001"],
+              lines: ["+91 91257 24483"],
             },
-            { icon: Mail, title: "Email", lines: ["info@myaimhub.in", "admissions@myaimhub.in"] },
+            { icon: Mail, title: "Email", lines: ["myaimhubofeducation@gmail.com"] },
             {
               icon: Clock,
               title: "Office hours",
-              lines: ["Monday – Saturday · 8:00 AM – 8:00 PM", "Sunday · 10:00 AM – 1:00 PM"],
+              lines: ["Monday – Saturday · 8:00 AM – 8:00 PM"],
             },
           ].map((item) => (
             <div key={item.title} className="surface-card flex gap-4 rounded-2xl p-6">
