@@ -121,6 +121,8 @@ function HomePage() {
                 alt="Teacher explaining a concept to students at MY AIM HUB OF EDUCATION"
                 width={1600}
                 height={1200}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
