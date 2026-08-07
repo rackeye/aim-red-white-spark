@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
           "Class 1–10 and Class 11–12 all streams. Small batches, weekly tests and doubt sessions that actually move marks.",
       },
     ],
-    links: [{ rel: "preload", as: "image", href: heroImage, fetchpriority: "high" }],
+    links: [{ rel: "preload", as: "image", href: heroImage, fetchPriority: "high" }],
   }),
   component: HomePage,
 });
