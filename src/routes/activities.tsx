@@ -51,8 +51,10 @@ function ActivitiesPage() {
             <img
               src={activitiesImage}
               alt="Students presenting a science exhibition model at MY AIM HUB OF EDUCATION"
-              width={1600}
-              height={1067}
+              width={1400}
+              height={934}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>

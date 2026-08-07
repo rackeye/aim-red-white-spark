@@ -35,6 +35,7 @@ export const Route = createFileRoute("/")({
           "Class 1–10 and Class 11–12 all streams. Small batches, weekly tests and doubt sessions that actually move marks.",
       },
     ],
+    links: [{ rel: "preload", as: "image", href: heroImage }],
   }),
   component: HomePage,
 });
@@ -121,6 +122,7 @@ function HomePage() {
                 alt="Teacher explaining a concept to students at MY AIM HUB OF EDUCATION"
                 width={1600}
                 height={1200}
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

@@ -37,6 +37,7 @@ export function BrandLogo({ className, iconClassName }: { className?: string; ic
         alt={`${brand.fullName} logo`}
         width={128}
         height={128}
+        decoding="async"
         className="h-full w-full object-contain"
         onError={() => setFailed(true)}
       />

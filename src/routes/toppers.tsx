@@ -79,9 +79,13 @@ function ToppersPage() {
                     {/* Profile Image / Fallback */}
                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-2 border-border/50 shadow-sm transition-transform duration-300 group-hover:scale-105">
                       {t.image ? (
-                        <img 
-                          src={t.image} 
-                          alt={t.name} 
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          width={160}
+                          height={160}
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover"
                         />
                       ) : (
